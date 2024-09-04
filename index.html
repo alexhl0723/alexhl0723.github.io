@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librería</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-page">
+
+        <header>
+            <div class="container-top-barra">
+                <div class="logo">
+                    <a href="#"><img src="./img/logos.png" alt="" width="120"></a>
+                </div>
+                <div class="container-barra-media">
+             <ul>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Contribuciones</a></li>
+                <li><a href="https://www.linkedin.com/in/alex-herbas-leiva-6b85672b0/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://x.com/alexhl2303" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/alex._.hl_/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+             </ul>
+            </div>
+            <div class="container-barra-rigth">
+                <button id="colorToggleBtn">Cambiar Color</button>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            </div>
+            <input id="buscar-libros"a class="search" type="text" placeholder="Busca tu libro, autor o favorito">
+            <div class="container-barra-generos">
+                <ul>
+                    <li><a href="#">Ficción</a></li>
+                    <li><a href="#">Novelas</a></li>
+                    <li><a href="#">Clásicas</a></li>
+                    <li><a href="#">Ciencia ficción</a></li>
+                </ul>
+                <hr>
+            </div>
+            <div class="title-generos">
+        <h2>Generos <i class="fa-solid fa-book-open"></i></h2>
+    </div>
+        <!-- cambio ejecutados -->
+        <button class="slider-btn prev-btn"><i class="fa-solid fa-circle-arrow-left"></i></button>
+        <div class="slider-container">
+            <div class="container-generos"> <!-- esto esta por nada no hace efecto en el media query -->
+                <div class="container-content-generos">
+                    <img src="./img/ficcion.jpg" alt="Ficción">
+                    <p><i class="fa-solid fa-arrow-right"></i> Ficción</p>
+                </div>
+                <div class="container-content-generos">
+                    <img src="./img/novelas.webp" alt="Novelas">
+                    <p><i class="fa-solid fa-arrow-right"></i> Novelas</p>
+                </div>
+                <div class="container-content-generos">
+                    <img src="./img/ciencificcion.webp" alt="Clásicas">
+                    <p><i class="fa-solid fa-arrow-right"></i> Clásicas</p>
+                </div>
+                <div class="container-content-generos">
+                    <img src="./img/genero clasisc.jpg" alt="Ciencia ficción">
+                    <p><i class="fa-solid fa-arrow-right"></i> Ciencia ficción</p>
+                </div>
+                <div class="container-content-generos">
+                    <img src="./img/genero mangas.jpg" alt="Ciencia ficción">
+                    <p><i class="fa-solid fa-arrow-right"></i> Mangas   </p>
+                </div>
+                <div class="container-content-generos">
+                    <img src="./img/ciencificcion.webp" alt="Ciencia ficción">
+                    <p><i class="fa-solid fa-arrow-right"></i> Ciencia ficción</p>
+                </div>
+                <div class="container-content-generos">
+                    <img src="./img/ciencificcion.webp" alt="Ciencia ficción">
+                    <p><i class="fa-solid fa-arrow-right"></i> Ciencia ficción</p>
+                </div>
+                <div class="container-content-generos">
+                    <img src="./img/ciencificcion.webp" alt="Ciencia ficción">
+                    <p><i class="fa-solid fa-arrow-right"></i> Ciencia ficción</p>
+                </div>
+            </div>
+            <button class="slider-btn next-btn"><i class="fa-solid fa-circle-arrow-right"></i></button>
+        </div>
+
+<!-- ya no mássssssss -->
+        <div class="title-most-read">
+            <h2>Más leidos</h2>
+        </div>
+
+
+        <div class="container-most-read">
+            <div class="read">
+                <img src="./img/el-extrajero.jpg" alt="">
+                <p class="name">El extranjero</p>
+                <span class="autor">Albert Camus</span>
+                <button>Leer</button>
+            </div>
+            <div class="read">
+                <img src="./img/Travesuras de la niña mala.jpg" alt="">
+                <p class="name">Travesuras de la niña mala</p>
+                <span class="autor">Mario Vargas Llosa</span>
+                <button>Leer</button>
+            </div>
+            <div class="read">
+                <img src="./img/crimen y castigo.jpg" alt="">
+                <p class="name">Crimen y castigo</p>
+                <span class="autor">Fiodor Dostoievski</span>
+                <button>Leer</button>
+            </div>
+            <div class="read">
+                <img src="./img/noches blancas.jpg" alt="">
+                <p class="name">Noches blancas</p>
+                <span class="autor">Fiodor Dostoievski</span>
+                <button>Leer</button>
+            </div>
+            <div class="read">
+                <img src="./img/1984.jpg" alt="">
+                <p class="name">1984</p>
+                <span class="autor">George Orwell</span>
+                <button>Leer</button>
+            </div>
+            <div class="read">
+                <img src="./img/20th century boys.webp" alt="">
+                <p class="name">20th Century Boys</p>
+                <span class="autor">Naoki Urasawa</span>
+                <button>Leer</button>
+            </div>
+        </div>
+
+        <!-- continuar leer -->
+        <div class="container-continuar-leyendo">
+            <h3>Continuar leyendo</h3>
+            <div class="ponle-block">
+            <div id="continuar-leyendo" class="container-most-read"></div>
+        </div>
+        </div>
+
+
+    </div>
+    <div>algodaf</div>
+    <script src="./main.js"></script>
+</body>
+</html>
