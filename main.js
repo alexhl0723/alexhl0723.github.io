@@ -108,7 +108,7 @@ function mostrarContinuarLeyendo() {
 
     librosGuardados.forEach((libro, index) => {
         continuarLeyendoContainer.innerHTML += `
-            <div class="read" data-index="${index}">
+                <div class="read" data-index="${index}">
                 <img src="${libro.imagenSrc}" alt="${libro.titulo}">
                 <p class="name">${libro.titulo}</p>
                 <span class="autor">${libro.autor}</span>

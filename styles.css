@@ -196,7 +196,6 @@ ul li a{
     margin-top: 1em;
 }
 .read {
-    width: auto;
     display: flex;
     flex-direction: column;
     background-color: #27201cc3;
@@ -259,14 +258,14 @@ ul li a{
 
 #continuar-leyendo {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     margin-left: 0px;
     margin-bottom: 2em;
 }
 
 
 /* /* Estilos generales para el modo oscuro */
- @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     body {
         background: #181411;
         color: white;
@@ -470,5 +469,7 @@ ul li a{
     /* ////////////////// */
     .container-continuar-leyendo {
         margin-left: 0.9em;
+        display: grid;
+        grid-template-rows: 5;
     }
 }
