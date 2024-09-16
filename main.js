@@ -148,3 +148,105 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function agregarAlCarrito(nombre, precio, autor, imagen) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let item = carrito.find(i => i.nombre === nombre);
+    if (item) {
+        item.cantidad++;
+    } else {
+        carrito.push({ nombre, precio, autor, imagen, cantidad: 1 });
+    }
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarIconoCarrito();
+}
+
+function actualizarIconoCarrito() {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let total = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    let iconoCarrito = document.querySelector('.fa-cart-shopping');
+    if (iconoCarrito) {
+        iconoCarrito.setAttribute('data-count', total);
+    }
+}
+
+function mostrarCarrito() {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let cartItems = document.querySelector('.cart-items');
+    let subtotal = 0;
+
+    if (cartItems) {
+        cartItems.innerHTML = '<h1>Tu Carrito de Compras</h1>';
+
+        carrito.forEach(item => {
+            subtotal += item.precio * item.cantidad;
+            cartItems.innerHTML += `
+                <div class="item">
+                    <img src="${item.imagen}" alt="${item.nombre}" class="item-image">
+                    <div class="item-details">
+                        <h3>${item.nombre}</h3>
+                        <p>$${item.precio}</p>
+                        <p>${item.autor}</p>
+                    </div>
+                    <div class="quantity-control">
+                        <button class="quantity-btn" onclick="cambiarCantidad('${item.nombre}', -1)">-</button>
+                        <span class="quantity-display">${item.cantidad}</span>
+                        <button class="quantity-btn" onclick="cambiarCantidad('${item.nombre}', 1)">+</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        let subtotalElement = document.querySelector('.summary-row:first-child span:last-child');
+        let totalElement = document.querySelector('.summary-row:last-child span:last-child');
+        if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+        if (totalElement) totalElement.textContent = `$${subtotal.toFixed(2)}`;
+    }
+}
+
+function cambiarCantidad(nombre, cambio) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let item = carrito.find(i => i.nombre === nombre);
+    if (item) {
+        item.cantidad += cambio;
+        if (item.cantidad <= 0) {
+            carrito = carrito.filter(i => i.nombre !== nombre);
+        }
+    }
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    mostrarCarrito();
+    actualizarIconoCarrito();
+}
+
+// Modificar el evento DOMContentLoaded existente
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarContinuarLeyendo();
+    actualizarIconoCarrito();
+
+    if (window.location.pathname.includes('carrito.html')) {
+        mostrarCarrito();
+    }
+
+    document.querySelectorAll('.read').forEach(book => {
+        book.addEventListener('click', function() {
+            const titulo = this.querySelector('.name').textContent;
+            const autor = this.querySelector('.autor').textContent;
+            const imagenSrc = this.querySelector('img').src;
+
+            agregarAContinuarLeyendo(titulo, autor, imagenSrc);
+        });
+
+        // Agregar evento al botón de comprar
+        let comprarBtn = book.querySelector('.comprar-btn');
+        if (comprarBtn) {
+            comprarBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); // Evita que se active el evento de click del libro
+                const nombre = book.querySelector('.name').textContent;
+                const autor = book.querySelector('.autor').textContent;
+                const imagen = book.querySelector('img').src;
+                const precio = 20.99; // Asumimos un precio fijo, ajusta según sea necesario
+                agregarAlCarrito(nombre, precio, autor, imagen);
+            });
+        }
+    });
+});
