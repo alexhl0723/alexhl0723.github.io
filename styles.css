@@ -17,6 +17,8 @@ body {
 
 
 .container-page{
+    width: 1500px;
+    margin: 0 auto;
     /* por esos 2 cambios esta rompiendo en celular arreglar proximamente */
     overflow: hidden;
 }
@@ -370,11 +372,12 @@ ul li a{
 /* Estilos para dispositivos móviles en pantallas de 360x720px (Oppo A57) */
 @media (max-width: 600px){
     .container-page{
+        width: auto;
+        overflow: hidden;
         padding: 0.1em;
     }
     .container-top-barra{
         justify-content: space-between;
-        width: 20%;
         margin: 0;
         padding: 0;
     }

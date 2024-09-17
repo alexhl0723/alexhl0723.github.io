@@ -30,7 +30,7 @@ document.getElementById('colorToggleBtn').addEventListener('click', function() {
 
     if (!isDarkMode) {
         backgroundColor = '#181411';
-        textColor = 'white';
+        textColor = 'black';//si algo malo pasa cambiar esto por white
         button.classList.add('active');
         isDarkMode = true;
     } else {
