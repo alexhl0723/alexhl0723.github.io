@@ -151,6 +151,11 @@ h1, h2 {
     justify-content: space-between;
     margin-bottom: 10px;
 }
+.checkout-btn a{
+    text-decoration: none;
+    color: black;
+}
+
 .checkout-btn {
     background-color: #00a86b;
     color: black;
@@ -161,8 +166,18 @@ h1, h2 {
     border-radius: 25px;
     cursor: pointer;
     margin-top: 20px;
+    transition: 0.5s ease-in-out;
 }
+.checkout-btn:hover{
+    background-color: #00a86b;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+
 .continue-btn {
+    transition: 0.5s ease-in-out;
     background-color: #f0f0f0;
     border: none;
     padding: 12px;
@@ -172,92 +187,44 @@ h1, h2 {
     cursor: pointer;
     margin-top: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* /* Estilos generales para el modo oscuro */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #181411;
-        color: white;
-    }
-
-    p, .read span {
-        color: white;
-    }
-
-    .read {
-        border-color: white;
-    }
-
-    .container-barra-generos a, .container-barra-media ul li a {
-        color: #b9a89d;
-    }
-
-    .slider-btn {
-        color: #b9a89d;
-    }
+.continue-btn:hover{
+    transform: scale(1.05);
 }
 
-/* Estilos generales para el modo claro */
-@media (prefers-color-scheme: light) {
-    body {
-        background: #fdf0e6;
-        color: #333;
-    }
-
-    p, .read span {
-        color: #181411;
-    }
-
-    .read {
-        border-color: #181411;
-    }
-
-    .container-barra-generos a, .container-barra-media ul li a {
-        color: #8f8783;
-    }
-
-    .slider-btn {
-        color: #bb8640;
-    }
-}
-
-/* Estilos para dispositivos móviles en pantallas de 360x720px (Oppo A57) */
 @media (max-width: 600px){
     .container-page{
+        width: auto;
+        overflow: hidden;
+    }}
+@media (max-width: 600px) {
+    .container-page {
         padding: 0.1em;
     }
-    .container-top-barra{
+
+    .container-top-barra {
         justify-content: space-between;
-        width: 20%;
         margin: 0;
         padding: 0;
     }
-    .container-barra-media ul{
-        font-size: 0.6em;
+
+    .container-barra-media ul {
+        font-size: 0.4em;
         padding: 0;
         margin: 0;
     }
-    .container-barra-media ul li a{
+
+    .container-barra-media ul li a {
         margin: 0;
-        padding: 0 0.3em;
+        padding: 0 0.2em;
     }
-    .container-barra-rigth{
+
+    .container-barra-rigth {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .container-barra-rigth button{
+
+    .container-barra-rigth button {
         font-size: 0.6em;
         width: 8em;
         margin: 0.2em;
@@ -266,41 +233,49 @@ h1, h2 {
         justify-content: center;
         padding: 0.4em 0.1em 0.4em 0.1em;
     }
-    .container-barra-rigth a i{
+
+    .container-barra-rigth a i {
         font-size: 1.2em;
         margin: 0.2em;
         padding: 0;
     }
 
-    .logo img{
-        width: 4.3em;
+    .logo img {
+        width: 4em;
     }
-    .search{
+
+    .search {
         font-size: 0.6em;
         width: 90%;
     }
-    .container-barra-generos li a{
+
+    .container-barra-generos li a {
         font-size: 0.8em;
         padding: 0 1em;
         margin: 0;
     }
-    .title-generos{
+
+    .title-generos {
         margin-left: 0.4em;
     }
-    .title-generos h2{
+
+    .title-generos h2 {
         font-size: 0.8em;
         margin-left: 0.3em;
         margin-top: 0.1em;
         padding: 0;
     }
+
     .slider-container {
         width: 93%;
         overflow: auto;
         font-size: 0.6em;
     }
+
     .container-generos {
         max-width: 100%;
     }
+
     .container-content-generos img {
         width: 9em;
         border-radius: 0.5em;
@@ -308,6 +283,7 @@ h1, h2 {
         margin: 0;
         padding: 0;
     }
+
     .container-content-generos {
         min-width: 10em;
         border-radius: 0em;
@@ -317,28 +293,33 @@ h1, h2 {
         justify-content: center;
         padding: 0;
     }
-    .container-content-generos p{
+
+    .container-content-generos p {
         width: 100%;
         text-align: left;
         margin-left: 0;
         padding-left: 0;
     }
-    .container-content-generos p i{
+
+    .container-content-generos p i {
         text-align: left;
         margin-left: 0.2em;
         margin-right: 0;
         padding: 0;
         padding-left: 0;
     }
-    .title-most-read{
+
+    .title-most-read {
         margin-left: 1.3em;
     }
-    .title-most-read h2{
+
+    .title-most-read h2 {
         font-size: 1.8em;
         margin-left: 0;
         margin-top: 0.1em;
         padding: 0;
     }
+
     .prev-btn {
         position: relative;
         top: 0px;
@@ -347,43 +328,52 @@ h1, h2 {
         margin: 0.2em;
         z-index: 1;
         font-size: 1.701em;
-        left: -3px; /* Ajusta la distancia del botón izquierdo */
+        left: -3px;
+        /* Ajusta la distancia del botón izquierdo */
     }
+
     .next-btn {
         padding: 0;
         margin: 0;
         top: 32px;
         font-size: 1.701em;
-        right: -25px; /* Ajusta la distancia del botón derecho */
+        right: -25px;
+        /* Ajusta la distancia del botón derecho */
     }
-    .container-most-read{
+
+    .container-most-read {
         width: 100%;
         overflow: auto;
         margin-left: 0;
         display: flex;
     }
-    .read{
+
+    .read {
         display: flex;
         padding-bottom: 10px;
         margin-left: 0;
         margin: 0.5em;
         width: 6em;
     }
+
     .read img {
         width: 6em;
         height: 7.5em;
     }
-    .read p{
+
+    .read p {
         font-size: 0.6em;
         padding: 0 0.3em;
         margin: 0;
     }
-    .read span{
+
+    .read span {
         margin: 0s;
         font-size: 0.6em;
         padding: 0 0.3em;
     }
-    .read button{
+
+    .read button {
         font-size: 0.6em;
         width: 5em;
         margin: 0;
@@ -391,6 +381,7 @@ h1, h2 {
         align-self: center;
         margin-top: auto;
     }
+
     /* ////////////////// */
     .container-continuar-leyendo {
         margin-left: 0.9em;
@@ -398,13 +389,16 @@ h1, h2 {
         width: 100%;
         overflow: auto;
     }
+
     .container-continuar-leyendo::-webkit-scrollbar {
         display: none;
     }
-    
+
     /* Ocultar la barra de desplazamiento en otros navegadores */
     .container-continuar-leyendo {
-        -ms-overflow-style: none;  /* Internet Explorer 10+ */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
     }
 }

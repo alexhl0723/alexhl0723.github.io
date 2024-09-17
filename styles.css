@@ -421,14 +421,14 @@ ul li a {
     }
 
     .container-barra-media ul {
-        font-size: 0.6em;
+        font-size: 0.4em;
         padding: 0;
         margin: 0;
     }
 
     .container-barra-media ul li a {
         margin: 0;
-        padding: 0 0.3em;
+        padding: 0 0.2em;
     }
 
     .container-barra-rigth {
@@ -454,7 +454,7 @@ ul li a {
     }
 
     .logo img {
-        width: 4.3em;
+        width: 4em;
     }
 
     .search {
@@ -615,4 +615,3 @@ ul li a {
         /* Firefox */
     }
 }
-    
