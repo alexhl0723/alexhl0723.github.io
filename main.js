@@ -112,7 +112,7 @@ function mostrarContinuarLeyendo() {
                 <img src="${libro.imagenSrc}" alt="${libro.titulo}">
                 <p class="name">${libro.titulo}</p>
                 <span class="autor">${libro.autor}</span>
-                <button>Leer</button>
+                <button>Ver</button>
                 <button class="eliminar-libro">Eliminar</button> <!-- Botón de eliminación -->
             </div>
         `;
