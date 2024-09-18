@@ -111,9 +111,12 @@ function mostrarContinuarLeyendo() {
                 <div class="read" data-index="${index}">
                 <img src="${libro.imagenSrc}" alt="${libro.titulo}">
                 <p class="name">${libro.titulo}</p>
-                <span class="autor">${libro.autor}</span>
+                <span class="autor" style="color: rgb(213, 213, 213);">${libro.autor}</span>
+                <div class="separar-button">
                 <button>Ver</button>
                 <button class="eliminar-libro">Eliminar</button> <!-- Botón de eliminación -->
+                </div>
+                <strong class="price-book">129.90</strong>
             </div>
         `;
     });
