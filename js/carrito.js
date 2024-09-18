@@ -139,4 +139,12 @@ document.querySelectorAll('.comprar-btn').forEach(button => {
         agregarAlCarrito(nombre, precio, autor, imagen);
     });
 });
-
+// Cambiar el título de la página cuando el usuario cambia de pestaña
+let previoTitle = document.title;
+window.addEventListener('blur', ()=>{
+    previoTitle= document.title;
+    document.title = '¡Vuelve bro necesito comer 👻!'; //el nombre
+})
+window.addEventListener('focus', ()=>{
+    document.title = previoTitle;
+})

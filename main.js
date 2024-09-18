@@ -251,3 +251,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+//para que cambie el nombre de la pestaña
+let previoTitle = document.title;
+window.addEventListener('blur', ()=>{
+    previoTitle= document.title;
+    document.title = '¡Vuelve bro necesito comer 👻!'; //el nombre
+})
+window.addEventListener('focus', ()=>{
+    document.title = previoTitle;
+})
