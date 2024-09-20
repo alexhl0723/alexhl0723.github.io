@@ -19,6 +19,7 @@ body {
 
 
 .container-page {
+    padding: 0.3em;
     /* por esos 2 cambios esta rompiendo en celular arreglar proximamente */
     overflow: hidden;
 }
