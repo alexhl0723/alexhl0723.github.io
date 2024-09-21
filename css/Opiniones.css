@@ -62,6 +62,7 @@ h1 {
 }
 
 .barra-busqueda input:focus {
+    outline: none;
     border-color: #1a73e8;
 }
 
@@ -149,6 +150,13 @@ main {
 
 .dejar-resena form button:hover {
     background-color: #135bb3;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none; 
+    border-color: #1a73e8; /* Cambia el color del borde si lo prefieres */
 }
 
 /* Footer */
