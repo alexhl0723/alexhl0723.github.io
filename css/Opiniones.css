@@ -1,0 +1,228 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../img/Libreria.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f0f0f0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Contenedor del encabezado */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logo img {
+    width: 150px; /* Tamaño ajustado del logo */
+    height: auto;
+}
+
+h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-right: 60px; /* Espacio para el logo */
+}
+
+/* Barra de búsqueda */
+.barra-busqueda {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.barra-busqueda input {
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    padding-left: 20px;
+}
+
+.barra-busqueda input::placeholder {
+    color: #ddd;
+}
+
+.barra-busqueda input:focus {
+    border-color: #1a73e8;
+}
+
+/* Contenedor principal */
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro suave */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px; /* Para separar del buscador */
+}
+
+.lista-resenas h2, .dejar-resena h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+/* Listado de reseñas */
+.resena {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.resena:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.resena h3 {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+.resena p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Formulario de reseñas */
+.dejar-resena form {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dejar-resena form label {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.dejar-resena form input, 
+.dejar-resena form select, 
+.dejar-resena form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    color: #f0f0f0;
+}
+
+.dejar-resena form button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dejar-resena form button:hover {
+    background-color: #135bb3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Media Queries para pantallas más pequeñas */
+
+/* Ajustes para tablets (pantallas entre 600px y 1024px) */
+@media (max-width: 1024px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    main {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .barra-busqueda input {
+        width: 90%;
+    }
+
+    .resena h3 {
+        font-size: 1.2rem;
+    }
+
+    .dejar-resena form {
+        padding: 20px;
+    }
+}
+
+/* Ajustes para móviles (pantallas menores a 600px) */
+@media (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .barra-busqueda input {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .resena {
+        padding: 15px;
+    }
+
+    .resena h3 {
+        font-size: 1.1rem;
+    }
+
+    .dejar-resena form {
+        padding: 15px;
+    }
+
+    .dejar-resena form button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
