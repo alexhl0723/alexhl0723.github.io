@@ -25,7 +25,7 @@ body {
 }
 
 .logo img {
-    width: 100px; /* Tamaño ajustado del logo */
+    width: 90px; /* Tamaño ajustado del logo */
     height: auto;
 }
 
@@ -62,10 +62,15 @@ h1 {
 }
 
 .barra-busqueda input:focus {
-    outline: none;
     border-color: #1a73e8;
+    outline: none;
 }
-
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none; 
+    border-color: #1a73e8; /* Cambia el color del borde si lo prefieres */
+}
 /* Contenedor principal */
 main {
     padding: 40px;
@@ -150,13 +155,6 @@ main {
 
 .dejar-resena form button:hover {
     background-color: #135bb3;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none; 
-    border-color: #1a73e8; /* Cambia el color del borde si lo prefieres */
 }
 
 /* Footer */
