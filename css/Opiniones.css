@@ -53,7 +53,6 @@ h1 {
     outline: none;
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
-    border: none;
     padding-left: 20px;
 }
 
@@ -62,15 +61,17 @@ h1 {
 }
 
 .barra-busqueda input:focus {
-    border-color: #1a73e8;
+    border-color: #000000;
     outline: none;
 }
+
 input:focus,
 textarea:focus,
 select:focus {
     outline: none; 
-    border-color: #1a73e8; /* Cambia el color del borde si lo prefieres */
+    border-color: #1a73e8; /* Color de borde al enfocar */
 }
+
 /* Contenedor principal */
 main {
     padding: 40px;
@@ -79,7 +80,7 @@ main {
     background-color: rgba(0, 0, 0, 0.7); /* Fondo negro suave */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    margin-top: 20px; /* Para separar del buscador */
+    margin-top: 20px; /* Espacio debajo de la barra de búsqueda */
 }
 
 .lista-resenas h2, .dejar-resena h2 {
