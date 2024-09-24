@@ -128,12 +128,67 @@ ul li a {
     padding: 0 15px;
 }
 
+
+.slider-container2 {
+    position: relative;
+    width: 100%;
+    max-width: auto;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #262525;
+    color: #333;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.slider-btn.prev {
+    left: 10px;
+}
+.slider-btn.next {
+    right: 10px;
+}
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.dot.active {
+    background-color: white;
+}
+
 .title-generos,
 .title-most-read h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #bb8640;
     font-size: 2.1em;
     margin-left: 1.8em;
+    margin-top: 1em;
 }
 
 .container-barra-generos hr {

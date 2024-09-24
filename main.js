@@ -1,4 +1,46 @@
-    // Escucha el evento de entrada en el campo de búsqueda
+const images = [
+    "./img/banner-bookstore-1.jpg",
+    "./img/banner-bookstore-2.jpg",
+    "./img/banner-bookstore-4.jpeg",
+    "./img/banner-bookstore-5.jpeg",
+    "./img/banner-bookstore-6.jpeg",
+];
+let currentIndex = 0;
+const sliderImage = document.getElementById('sliderImage');
+const dotsContainer = document.getElementById('sliderDots');
+
+function showImage(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    currentIndex = index;
+    sliderImage.src = images[currentIndex];
+    updateDots();
+}
+
+function changeImage(step) {
+    showImage(currentIndex + step);
+}
+
+function updateDots() {
+    dotsContainer.innerHTML = '';
+    images.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === currentIndex) dot.classList.add('active');
+        dot.onclick = () => showImage(index);
+        dotsContainer.appendChild(dot);
+    });
+}
+
+function autoSlide() {
+    changeImage(1);
+}
+
+updateDots();
+//tiempo de espera para cambiar de imagen
+setInterval(autoSlide, 1500);
+
+// Escucha el evento de entrada en el campo de búsqueda
 document.getElementById('buscar-libros').addEventListener('input', function() {
     const filter = this.value.toLowerCase(); // Obtiene el texto de búsqueda y lo convierte a minúsculas
     const books = document.querySelectorAll('.container-most-read .read'); // Selecciona todos los elementos con clase 'read'
