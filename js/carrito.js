@@ -148,3 +148,62 @@ window.addEventListener('blur', ()=>{
 window.addEventListener('focus', ()=>{
     document.title = previoTitle;
 })
+
+function checkAuthForCart() {
+    const userInfo = document.getElementById('user-info');
+    const logoutBtn = document.getElementById('logout_btn');
+
+    if (localStorage.getItem('isAuthenticated')) {
+        const userEmail = localStorage.getItem('userEmail');
+        userInfo.textContent = `Usuario conectado: ${userEmail}`;
+        logoutBtn.style.display = 'inline-block';
+    } else if (localStorage.getItem('continueWithoutLogin')) {
+        userInfo.textContent = `Usuario visitante: Navegando sin iniciar sesión`;
+    } else {
+        window.location.href = '../pages/user.html'; // Redirige al login si no está autenticado
+    }
+
+    logoutBtn.addEventListener('click', function() {
+        localStorage.removeItem('isAuthenticated');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('continueWithoutLogin');
+        window.location.href = '../pages/user.html';
+    });
+}
+
+// Inicializar la página
+document.addEventListener('DOMContentLoaded', () => {
+    initializeColorMode();
+    checkAuthForCart();
+    actualizarIconoCarrito();
+    if (window.location.pathname.includes('./carrito.html')) {
+        if (localStorage.getItem('isAuthenticated') || localStorage.getItem('continueWithoutLogin')) {
+            mostrarCarrito();
+        }
+    }
+
+    // Agregar event listeners a los botones de compra en la página principal
+    document.querySelectorAll('.comprar-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            let read = e.target.closest('.read');
+            let nombre = read.querySelector('.name').textContent;
+            let autor = read.querySelector('.autor').textContent;
+            let precio = 20.99; // Asumimos un precio fijo, ajusta según sea necesario
+            let imagen = read.querySelector('img').src;
+            agregarAlCarrito(nombre, precio, autor, imagen);
+        });
+    });
+
+    // Manejar el botón de completar pago
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function(e) {
+            if (!localStorage.getItem('isAuthenticated')) {
+                e.preventDefault();
+                alert('Por favor, inicia sesión para completar tu compra.');
+                window.location.href = '../pages/user.html';
+            }
+            // Si está autenticado, el botón funcionará normalmente mes estan robanddioooooooooooooooooooooooooooooo
+        });
+    }
+});

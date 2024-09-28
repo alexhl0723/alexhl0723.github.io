@@ -1,12 +1,14 @@
-*{
+* {
     box-sizing: border-box;
     font-family: sans-serif;
     padding: 0;
     margin: 0;
 }
-*::-webkit-scrollbar{
+
+*::-webkit-scrollbar {
     display: none;
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,25 +18,30 @@ body {
 }
 
 
-.container-page{
+.container-page {
+    padding: 0.3em;
     /* por esos 2 cambios esta rompiendo en celular arreglar proximamente */
     overflow: hidden;
 }
-header{
+
+header {
     align-self: start;
     align-items: center;
 }
-.logo{
+
+.logo {
     margin: 0;
     padding: 0;
 }
-.container-top-barra{
+
+.container-top-barra {
     display: flex;
     color: black;
     justify-content: space-between;
     align-items: center;
 }
-.container-barra-rigth button{
+
+.container-barra-rigth button {
     background: #392f28;
     color: white;
     border: none;
@@ -44,10 +51,12 @@ header{
     cursor: pointer;
     outline: none;
 }
-.container-barra-rigth{
+
+.container-barra-rigth {
     margin-right: 0.9em;
 }
-.container-barra-rigth a i{
+
+.container-barra-rigth a i {
     color: #a0643a;
     padding: 0.4em;
     margin-left: 0.2em;
@@ -58,33 +67,70 @@ header{
     transition: 9.1 ease-in-out;
 }
 
-.container-barra-rigth a i:hover{
+.container-barra-rigth a i:hover {
     color: #7c5133;
     transform: rotate(360deg);
     scale: 1.3;
     transition: transform 0.4s ease-in-out;
 }
 
-.container-top-barra ul{
+.container-top-barra ul {
     display: flex;
     list-style: none;
 }
 
-.container-barra-media ul li a{
+.container-barra-media ul li a {
     color: #8f8783;
     font-size: 1.6em;
 }
-.container-barra-media ul li a i:hover{
+
+.container-barra-media ul li a i:hover {
     scale: 1.5;
     transform: rotate(360deg);
     transition: transform 0.4s ease-in-out;
 }
 
-ul li a{
+.container-user{
+    display: none;
+}
+
+.search {
+    margin-left: 1.7em;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    background: #392f28;
+    padding: 0.5em 1em;
+    border-radius: 1.5em;
+    width: 95%;
+    outline: none;
+}
+
+.container-barra-generos {
+    margin-top: 20px;
+}
+
+.container-barra-generos a {
+    color: #8f8783;
+    font-size: 1em;
+    margin-left: 2.8em;
+}
+
+.container-barra-generos a:hover {
+    color: #bb8640;
+}
+
+.container-barra-generos ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li a {
     text-decoration: none;
     padding: 0 15px;
 }
-
 
 /* ///////// */
 

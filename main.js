@@ -305,3 +305,33 @@ window.addEventListener('blur', ()=>{
 window.addEventListener('focus', ()=>{
     document.title = previoTitle;
 })
+//
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userInfo = document.getElementById('user-info');
+    const logoutBtn = document.getElementById('logout_btn');
+
+    // Verificar si el usuario está autenticado o si ha elegido continuar sin iniciar sesión
+    if (!localStorage.getItem('isAuthenticated') && !localStorage.getItem('continueWithoutLogin')) {
+        window.location.href = './pages/user.html';
+        return;
+    }
+
+    // Mostrar información del usuario si está autenticado
+    if (localStorage.getItem('isAuthenticated')) {
+        const userEmail = localStorage.getItem('userEmail');
+        userInfo.textContent = `Usuario conectado: ${userEmail}`;
+    } else {
+        // Si el usuario no está autenticado, indicar que es un usuario visitante
+        userInfo.textContent = `Usuario visitante: Navegando sin iniciar sesión`;
+        logout_btn.style.display = 'none'; // Ocultar el botón de cierre de sesión
+    }
+
+    // Manejar cierre de sesión
+    logoutBtn.addEventListener('click', function() {
+        localStorage.removeItem('isAuthenticated');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('continueWithoutLogin'); // También eliminar el indicador de "continuar sin iniciar sesión"
+        window.location.href = './pages/user.html';
+    });
+});

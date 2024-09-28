@@ -90,6 +90,10 @@ header {
     transition: transform 0.4s ease-in-out;
 }
 
+.container-user{
+    display: none;
+}
+
 .search {
     margin-left: 1.7em;
     color: white;
