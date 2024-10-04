@@ -1,0 +1,374 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+:root {
+    
+    --color1: #f7a837;
+    
+    --color2: #f9be64;
+    
+    --color3: #fbd491;
+    
+    /* --color4: #fde9bf;  */
+    
+    --color5: #fffbec;
+   
+    --color6: #f4f6f8;
+
+
+}
+body{
+    background-color: var(--color6);
+}
+h1,h2 ,h3 , p {
+    color: #303030;
+}
+p{
+    font-family: "Lora", system-ui;
+}
+header{
+    background-color: antiquewhite;
+}
+header img{
+    width: 100px;
+    height: 100px;
+}
+.menu{
+    float: inline-end;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.menu ul{
+    text-decoration-line: none;
+    display: flex; 
+    list-style: none;
+}
+.menu ul li{
+    text-decoration: none;
+    margin: 10px;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: #bb8640;
+    font-size: 20px;
+}
+main{
+    /* width: 95%; */
+    /* margin: auto; */
+    display: flex;
+    padding: 40px 55px;
+}
+section{
+    width: 80%;
+    padding: 10px;
+}
+section h1{
+    margin-bottom: 10px;
+}
+.portada{
+    width: 500px;
+    height: 360px;
+    margin: 10px 0px;
+    text-align: center;
+    
+}
+.portada img{
+    width: 50%;
+    height: 95%;
+
+}
+.caja-contenido{
+    display: flex;
+    flex-direction: column;
+}
+.principal h1{
+    font-family: "Lora", system-ui;
+    font-size: 37px;
+}
+
+.img1{
+    width: 96%;
+    height: 360px;
+}
+.parrafo{
+    text-align: left;
+    line-height: 1.5;
+    margin: 10px 0px;
+    width: 96%;
+    font-size: 18px;
+    font-family:"Source Sans 3", sans-serif;
+}
+section p{
+    margin-bottom: 10px;
+
+}
+.titulo{
+    font-size: 22px;
+    font-family: "Lora", system-ui;
+    font-weight: 500;
+    color: #BA704F;
+    font-weight: 600;
+    font-style: oblique;
+}
+.fecha{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: rgb(190, 106, 49);
+}
+.fecha p{
+    margin: 0px 5px;
+    color: rgb(190, 106, 49);
+}
+
+.material-symbols-outlined{
+    font-size: 30px;
+}
+.caja-derecha{
+    width: 20%;
+    /* border: solid 1px black; */
+    margin-top: 20%;
+    margin-right: 10px;
+
+}
+.caja-derecha aside{
+    border:  solid 1px #D8D2C2;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+.caja-derecha aside a {
+    text-decoration: none;
+}
+.caja-derecha aside h2{
+    font-family:  "Lora", system-ui;
+    color: #BA704F;
+}
+.about{
+    height: auto;
+}
+.about p{
+    margin: 20px 0px;
+    color: #303030;
+}
+#icon{
+    margin: 0 33px;
+}
+.fa-brands{
+    font-size: 24px;
+    padding: 0px 5px;
+    color: #303030;
+}
+.fa-brands:hover{
+    transform: translateY(-8px);
+    color: #BA704F;
+}
+.submenu{
+    height: auto;
+    margin-top: 30%;
+}
+.submenu p{
+    display: inline-block;
+    margin: 10px 0px;
+    color: #303030;
+    
+}
+.submenu p:hover{
+    color: #BA704F;
+    transform: translateX(5px);
+    transition: all 250ms ease;
+}
+.categorias{
+    height: auto;
+    margin-top: 30%;
+}
+.categorias p{
+    margin: 25px 0px;
+    color: #303030;
+}
+.categorias p:hover{
+    color: #BA704F;
+    transform: translateX(5px);
+    transition: all 250ms ease;
+}
+
+/* .caja-comentario{
+    display: flex;
+    flex-direction: column;
+} */
+.form-coment{
+    display:flex;
+    flex-direction: column;
+
+}
+label{
+    display: inline-block;
+    width: 150px;
+    margin: 5px 0px;
+    font-size: 19px;
+
+}
+textarea , input{
+    width: 40%;
+    padding: 5px;
+}
+textarea{
+    line-height: 1.2;
+    height: 90px;
+}
+button{
+    width: 90px; 
+    margin-top: 15px;
+    margin-left: 150px; 
+    border: solid 2px burlywood;
+    border-radius: 10px ;
+    /* border-color: burlywood; */
+    background-color: burlywood;  
+    padding: 5px;      
+    color: white;  
+}
+button:hover{
+    background-color: white;
+    color: burlywood;
+}
+.espacio-coment{
+    margin: 30px 0px;
+}
+.espacio-coment h3{
+    font-size: 22px;
+}
+.espacio-coment hr{
+    width: 60%;
+}
+.comentario{
+    width: 60%;
+    height: auto;
+}
+.caja-comentario{
+    margin-bottom: 20px;
+}
+.caja-comentario h3{
+    font-size: 21px;
+}
+.cajita-coment{
+    width: 70%;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2) ;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0px;
+    background-color:#cc6d41cc;
+}
+.cajita-coment h3{
+    font-family: "Frank Ruhl Libre", system-ui;
+}
+.cajita-coment p{
+    font-family:"Source Sans 3", sans-serif;
+}
+.cajita-coment img{
+    float: left;
+}
+.info-coment{
+    display: flex;
+    flex-direction: column;
+}
+.caja-post{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 25px 0px ;
+}
+.post{
+    width: 280px;
+    height: auto;
+    
+}
+.post img{
+    width: 100%;
+}
+.descrip a {
+    text-decoration: none;
+}
+.descrip h2{
+    margin-bottom: 10px;
+    font-family: "Frank Ruhl Libre", system-ui;
+    text-align: left;
+    
+}
+.descrip h2:hover{
+    color: rgb(190, 106, 49);
+}
+.descrip p{
+    font-family:"Source Sans 3", sans-serif;
+    text-align:  left;
+    font-size: 17px;
+}
+#fin{
+    background-color: antiquewhite;
+    display: flex;
+    height: 300px;
+    width: 100%;
+    padding: 10px 55px;
+}
+#fin div{
+    width: 25%;
+}
+#fin h2{
+    margin-top: 20%;
+    font-size: 26px;
+}
+.tienda{
+    font-family: 'Times New Roman', Times, serif;
+}
+.tienda h2{
+    color: rgb(58, 38, 17);
+}
+.blog h2{
+    color: #BA704F;
+}
+.blog p{
+    font-family: 'Times New Roman', Times, serif;
+    width: 98%;
+    font-size: 17px;
+    margin-top: 10px;
+}
+.product-categ{
+    text-align: center;
+}
+.product-categ h2{
+    color: #BA704F;
+}
+.product-categ a{
+    text-decoration: none;
+    color: #303030;
+    display: block;
+    margin: 10px;
+}
+
+.product-categ p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+.product-categ p:hover{
+    color: #BA704F;
+    transform: translateX(5px);
+    transition: all 250ms ease;
+}
+.contacto h2{
+    color: #BA704F;
+}
+.contacto p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    margin-top: 10px;
+}
+.contacto a{
+    color: #303030;
+    text-decoration: none;
+}
+.contacto a:hover{
+    color: #BA704F;
+}
+

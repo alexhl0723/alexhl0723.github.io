@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas de Libros</title>
+    <link rel="icon" href="../img/file.png" type="logo">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Opiniones.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          
+            <div class="logo">
+                <img src="../img/file.png" alt="Logo" />
+            </div>
+            
+            <h1>Reseñas de Usuarios</h1>
+        </div>
+        <div class="barra-busqueda">
+            <input type="text" id="buscar" placeholder="Buscar por libro o autor..." onkeyup="buscarResenas()">
+        </div>
+    </header>
+
+
+    <main>
+        <!-- Listado de reseñas -->
+        <section class="lista-resenas">
+            <h2>Reseñas</h2>
+            <div id="contenedor-resenas">
+                <div class="resena" data-libro="El Quijote" data-autor="Miguel de Cervantes">
+                    <h3>El Quijote - Miguel de Cervantes</h3>
+                    <p class="calificacion">⭐⭐⭐⭐⭐</p>
+                    <p>"Un clásico que todo el mundo debe leer al menos una vez."</p>
+                </div>
+
+                <div class="resena" data-libro="Cien Años de Soledad" data-autor="Gabriel García Márquez">
+                    <h3>Cien Años de Soledad - Gabriel García Márquez</h3>
+                    <p class="calificacion">⭐⭐⭐⭐</p>
+                    <p>"Una obra maestra de la literatura, pero un poco densa en algunas partes."</p>
+                </div>
+
+                <div class="resena" data-libro="1984" data-autor="George Orwell">
+                    <h3>1984 - George Orwell</h3>
+                    <p class="calificacion">⭐⭐⭐⭐⭐</p>
+                    <p>"Perturbador y poderoso. Un libro que te hace reflexionar sobre la sociedad."</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Formulario para dejar una reseña -->
+         <section class="dejar-resena">
+            <h2>Dejar una reseña</h2>
+            <form id="formulario-resena" onsubmit="return enviarResena()">
+                <label for="libro">Título del libro:</label>
+                <input type="text" id="libro" name="libro" required>
+
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required>
+
+                <label for="calificacion">Calificación:</label>
+                <select id="calificacion" name="calificacion">
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+                <button type="submit">Enviar reseña</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Reseñas de Libros. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../js/Opiniones.js"></script>
+</body>
+</html>
