@@ -7,6 +7,13 @@ body{
     
     background-color:rgb(233, 226, 208);
 }
+
+.container-complent {
+
+    width: 1500px;
+    margin: 0 auto;
+    
+}
 header{
     display: flex;
     align-items: center;
