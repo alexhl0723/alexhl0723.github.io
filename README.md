@@ -91,4 +91,4 @@ Puedes ver una versión en vivo de la aplicación [aquí](https://alexhl0723.git
 
 ## 📧 Contacto
 
-Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de **[ALEX](mailto:alex@gmail.com)** o **[jossxph@gmail.com](mailto:jossxph@gmail.com) **.
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de **[ALEX](mailto:alex@gmail.com)** o **[jossxph@gmail.com](mailto:jossxph@gmail.com)**.
