@@ -1,3 +1,4 @@
+//contantes para el slider
 const images = [
     "./img/banner-bookstore-1.jpg",
     "./img/banner-bookstore-2.jpg",
@@ -5,10 +6,11 @@ const images = [
     "./img/banner-bookstore-5.jpeg",
     "./img/banner-bookstore-6.jpeg",
 ];
+//variables para el slider
 let currentIndex = 0;
 const sliderImage = document.getElementById('sliderImage');
 const dotsContainer = document.getElementById('sliderDots');
-
+//funciones para el slider
 function showImage(index) {
     if (index < 0) index = images.length - 1;
     if (index >= images.length) index = 0;
@@ -16,11 +18,12 @@ function showImage(index) {
     sliderImage.src = images[currentIndex];
     updateDots();
 }
+//funcion para cambiar de imagen
 
 function changeImage(step) {
     showImage(currentIndex + step);
 }
-
+//funcion para actualizar los puntos
 function updateDots() {
     dotsContainer.innerHTML = '';
     images.forEach((_, index) => {
@@ -31,7 +34,7 @@ function updateDots() {
         dotsContainer.appendChild(dot);
     });
 }
-
+//funcion para cambiar de imagen automaticamente
 function autoSlide() {
     changeImage(1);
 }
@@ -121,7 +124,7 @@ function scrollSlider(distance) {
         behavior: 'smooth'
     });
 }
-
+// Eventos para los botones de desplazamiento
 document.querySelector('.prev-btn').addEventListener('click', () => scrollSlider(-280));
 document.querySelector('.next-btn').addEventListener('click', () => scrollSlider(280));
 
@@ -147,7 +150,7 @@ function mostrarContinuarLeyendo() {
     const continuarLeyendoContainer = document.getElementById('continuar-leyendo');
 
     continuarLeyendoContainer.innerHTML = '';
-
+    // Mostrar los libros guardados en el contenedor
     librosGuardados.forEach((libro, index) => {
         continuarLeyendoContainer.innerHTML += `
                 <div class="read" data-index="${index}">
@@ -162,7 +165,7 @@ function mostrarContinuarLeyendo() {
             </div>
         `;
     });
-
+    // Agregar evento a los botones de eliminación
     document.querySelectorAll('.eliminar-libro').forEach(button => {
         button.addEventListener('click', function() {
             const libroIndex = this.parentElement.getAttribute('data-index');
@@ -182,7 +185,7 @@ function eliminarLibro(index) {
 // Evento DOMContentLoaded para cargar la lista al inicio
 document.addEventListener('DOMContentLoaded', function() {
     mostrarContinuarLeyendo();
-
+    // Agregar evento a los botones de "Ver"
     document.querySelectorAll('.read').forEach(book => {
         book.addEventListener('click', function() {
             const titulo = this.querySelector('.name').textContent;
@@ -206,7 +209,7 @@ function agregarAlCarrito(nombre, precio, autor, imagen) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarIconoCarrito();
 }
-
+    //funcion para actualizar el icono del carrito
 function actualizarIconoCarrito() {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let total = carrito.reduce((sum, item) => sum + item.cantidad, 0);
@@ -215,12 +218,12 @@ function actualizarIconoCarrito() {
         iconoCarrito.setAttribute('data-count', total);
     }
 }
-
+    // Función para mostrar los elementos elegidos desde la tienda para visualizar en el carrito
 function mostrarCarrito() {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let cartItems = document.querySelector('.cart-items');
     let subtotal = 0;
-
+    // Mostrar los elementos en el carrito
     if (cartItems) {
         cartItems.innerHTML = '<h1>Tu Carrito de Compras</h1>';
 
@@ -242,14 +245,14 @@ function mostrarCarrito() {
                 </div>
             `;
         });
-
+        // Mostrar el subtotal y el total en el carrito----esta mal falta algunas modificaciiones(cambiar clases y llamar en carrito el valor)
         let subtotalElement = document.querySelector('.summary-row:first-child span:last-child');
         let totalElement = document.querySelector('.summary-row:last-child span:last-child');
         if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
         if (totalElement) totalElement.textContent = `$${subtotal.toFixed(2)}`;
     }
 }
-
+    //cambiar la cantidad de un item en el carrito
 function cambiarCantidad(nombre, cambio) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let item = carrito.find(i => i.nombre === nombre);
@@ -268,7 +271,7 @@ function cambiarCantidad(nombre, cambio) {
 document.addEventListener('DOMContentLoaded', function() {
     mostrarContinuarLeyendo();
     actualizarIconoCarrito();
-
+    // Mostrar el carrito si estamos en la página correcta
     if (window.location.pathname.includes('carrito.html')) {
         mostrarCarrito();
     }
@@ -307,6 +310,7 @@ window.addEventListener('focus', ()=>{
 })
 //
 
+// Evento DOMContentLoaded para cargar si no estas logueado o si estas logueado
 document.addEventListener('DOMContentLoaded', function() {
     const userInfo = document.getElementById('user-info');
     const logoutBtn = document.getElementById('logout_btn');

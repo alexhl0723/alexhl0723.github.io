@@ -52,6 +52,7 @@ document.getElementById('colorToggleBtn').addEventListener('click', function() {
 // Inicializar el color de la página al cargar
 initializeColorMode();
 
+// Función para agregar un item al carrito
 function agregarAlCarrito(nombre, precio, autor, imagen) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let item = carrito.find(i => i.nombre === nombre);
@@ -134,7 +135,7 @@ document.querySelectorAll('.comprar-btn').forEach(button => {
         let read = e.target.closest('.read');
         let nombre = read.querySelector('.name').textContent;
         let autor = read.querySelector('.autor').textContent;
-        let precio = 20.99; // Asumimos un precio fijo, ajusta según sea necesario
+        let precio = 20.99;
         let imagen = read.querySelector('img').src;
         agregarAlCarrito(nombre, precio, autor, imagen);
     });
@@ -149,6 +150,7 @@ window.addEventListener('focus', ()=>{
     document.title = previoTitle;
 })
 
+//restringir el acceso a la pagina de carrito si no esta autenticado ----------- falta desarrollar
 function checkAuthForCart() {
     const userInfo = document.getElementById('user-info');
     const logoutBtn = document.getElementById('logout_btn');

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/info-pago.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-top-barra">
+            <div class="logo">
+                <a href="../index.html"><img src="../img/logo-reak .png" alt="" width="120"></a>
+            </div>
+            <div class="container-barra-media">
+                <ul>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="#">Contribuciones</a></li>
+                    <li><a href="https://www.linkedin.com/in/alexherbasleiva" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://x.com/alexhl2303" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/alex._.hl_/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/alexhl0723/alexhl0723.github.io" target="_blank"><i
+                                class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </div>
+            <div class="container-barra-rigth">
+                <button id="colorToggleBtn">Cambiar Color</button>
+                <a href="#" id="logout_btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a href="./user.html"><i class="fa-regular fa-user"></i></a>
+                <a href="./carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#"><i class="fa-regular fa-heart"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-proceso-pago">
+
+            <div class="container">
+                <div class="flex-container">
+                    <!-- Formulario de envío y pago -->
+                    <div class="form-section">
+                        <div class="card">
+                            <h2>Datos de Envío</h2>
+                            <!--FORMULARIO DE REGISTRO QUE GUARDA LOS DATOS EN EL SERVIDOR Y LOS MUESTRA
+                            EN LA EL ARCHIVO text.txt EL FORMULARIO DE REGISTRO FUNCIONA CON EL SERVIDOR
+                            DE NODEJS Y GUARDA LOS DATOS EN UN ARCHIVO TXT NO DEBE CAMBIARSE EL FORM ACTION
+                            YA QUE ESTA CONFIGURADO PARA EL SERVIDOR DE NODEJS
+                            SI NO SE PUEDE REGISTRAR, POR FAVOR REVISAR QUE EL SERVIDOR ESTE CORRIENDO
+                            CON EL COMANDO EN LA TERMINAL "js/info-pago-server.js" -->
+                            <form id="registroForm" action="http://localhost:3000/registrar" method="POST">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre</label>
+                                        <input type="text" id="nombre" name="nombre" required> <!--el name jala para el
+                                        servidor y pasar los datos al archivo detxt ASÍ SUCECIBAMENTE CON LOS DEMÁS-->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellidos">Apellidos</label>
+                                        <input type="text" id="apellidos" name="apellidos" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefono">Teléfono</label>
+                                        <input type="tel" id="telefono" name="telefono" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vivienda">Tipo de vivienda</label>
+                                        <input type="text" id="vivienda" name="vivienda" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="calle">Calle, avenida o jiron</label>
+                                        <input type="text" id="calle" name="calle" required>
+                                    </div>
+                                    <div>
+                                        <label for="departamento">Departamento</label>
+                                        <select id="departamento" name="departamento">
+                                            <option>Elija una opción</option>
+                                            <option>Amazonas</option>
+                                            <option>Áncash</option>
+                                            <option>Apurímac</option>
+                                            <option>Arequipa</option>
+                                            <option>Ayacucho</option>
+                                            <option>Cajamarca</option>
+                                            <option>Callao</option>
+                                            <option>Cusco</option>
+                                            <option>Huancavelica</option>
+                                            <option>Huánuco</option>
+                                            <option>Ica</option>
+                                            <option>Junín</option>
+                                            <option>La Libertad</option>
+                                            <option>Lambayeque</option>
+                                            <option>Lima</option>
+                                            <option>Loreto</option>
+                                            <option>Madre de Dios</option>
+                                            <option>Moquegua</option>
+                                            <option>Pasco</option>
+                                            <option>Piura</option>
+                                            <option>Puno</option>
+                                            <option>San Martín</option>
+                                            <option>Tacna</option>
+                                            <option>Tumbes</option>
+                                            <option>Ucayali</option>
+                                            <!-- Agrega más departamentos según sea necesario -->
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="distritos">Distrito</label>
+                                        <select id="distritos" name="distritos">
+                                            <option>Elija una opción</option>
+                                            <option>Ancón</option>
+                                            <option>Ate</option>
+                                            <option>Barranco</option>
+                                            <option>Breña</option>
+                                            <option>Carabayllo</option>
+                                            <option>Cercado de Lima</option>
+                                            <option>Chaclacayo</option>
+                                            <option>Chorrillos</option>
+                                            <option>Cieneguilla</option>
+                                            <option>Comas</option>
+                                            <option>El Agustino</option>
+                                            <option>Independencia</option>
+                                            <option>Jesús María</option>
+                                            <option>La Molina</option>
+                                            <option>La Victoria</option>
+                                            <option>Lince</option>
+                                            <option>Los Olivos</option>
+                                            <option>Lurigancho-Chosica</option>
+                                            <option>Lurín</option>
+                                            <option>Magdalena del Mar</option>
+                                            <option>Miraflores</option>
+                                            <option>Pachacámac</option>
+                                            <option>Pucusana</option>
+                                            <option>Pueblo Libre</option>
+                                            <option>Puente Piedra</option>
+                                            <option>Punta Hermosa</option>
+                                            <option>Punta Negra</option>
+                                            <option>Rímac</option>
+                                            <option>San Bartolo</option>
+                                            <option>San Borja</option>
+                                            <option>San Isidro</option>
+                                            <option>San Juan de Lurigancho</option>
+                                            <option>San Juan de Miraflores</option>
+                                            <option>San Luis</option>
+                                            <option>San Martín de Porres</option>
+                                            <option>San Miguel</option>
+                                            <option>Santa Anita</option>
+                                            <option>Santa María del Mar</option>
+                                            <option>Santa Rosa</option>
+                                            <option>Santiago de Surco</option>
+                                            <option>Surquillo</option>
+                                            <option>Villa El Salvador</option>
+                                            <option>Villa María del Triunfo</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- este es la parte del uno solo -->
+                                <div class="form-group">
+                                    <label for="Direccion">Dirección</label>
+                                    <input type="text" id="direccion" name="direccion" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Referencia">Referencias</label>
+                                    <input type="text" id="referencia" name="referencia" required>
+                                </div>
+                                <!-- //registrar los datos  -->
+                                <input class="saveData" type="submit" value="Registrarse">
+                            </form>
+                        </div>
+
+                        <div class="card">
+                            <h2>Método de Pago</h2>
+                            <div class="form-group">
+                                <div class="payment-option">
+                                    <input type="radio" id="tarjeta" name="metodo-pago" checked>
+                                    <label for="tarjeta">Tarjeta de Crédito/Débito</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="tarjeta" name="metodo-pago" checked>
+                                    <label for="tarjeta">Efectivo</label>
+                                </div>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="metodo-pago">
+                                <label for="paypal">PayPal</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resumen de la orden -->
+                    <div class="summary-section">
+                        <div class="card order-summary">
+                            <h2>Resumen de la Orden</h2>
+                            <div class="summary-divider">
+                                <div class="summary-item">
+                                    <span>Subtotal</span>
+                                    <span>$99.99</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Envío</span>
+                                    <span>$5.00</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Impuestos</span>
+                                    <span>$10.00</span>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <span>Total</span>
+                                <span>$114.99</span>
+                            </div>
+                            <a href="https://www.paypal.com/ncp/payment/2DP3DMX37MGBE"><button class="submit-button">Realizar Pedido</button></a>
+                        </div>
+                        <div class="card order-summary">
+                            <h2>Cupon de descuento</h2>
+                            <div class="summary-divider">
+                                <div class="summary-item">
+                                    <span>Total</span>
+                                    <span>$99.99</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Envío</span>
+                                    <span>$5.00</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Decuento</span>
+                                    <span>$23</span>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <span>Total</span>
+                                <span>$72.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+</body>
+
+</html>
